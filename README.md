@@ -11,20 +11,21 @@ Deepwick colors for `ls` and other tools that read `LS_COLORS`, as a [GNU dircol
 ## Install
 
 ```sh
-cp deepwick.dircolors ~/.dir_colors
+cp deepwick.dircolors ~/.dircolors
 ```
 
-Many distributions (Fedora, Debian, Ubuntu) load `~/.dir_colors` automatically
-in login shells. Otherwise, add to `~/.bashrc` or `~/.zshrc`:
+Debian and Ubuntu's stock `~/.bashrc` loads `~/.dircolors`, and so does
+Fedora's `/etc/profile.d/colorls.sh` (as long as there is no `~/.dir_colors`,
+which it reads first). Otherwise, add to `~/.bashrc` or `~/.zshrc`:
 
 ```sh
-eval "$(dircolors -b ~/.dir_colors)"
+eval "$(dircolors -b ~/.dircolors)"
 ```
 
 For fish, add to `~/.config/fish/config.fish`:
 
 ```fish
-eval (dircolors -c ~/.dir_colors)
+eval (dircolors -c ~/.dircolors)
 ```
 
 ## Notes

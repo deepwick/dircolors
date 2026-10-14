@@ -125,3 +125,10 @@ def test_ls_colors_every_file_role(tmp_path):
 
 def test_port_conventions():
     assert check_port(REPO, PALETTE.allowed_hex()) == []
+
+
+def test_readme_installs_where_distributions_look():
+    # Debian/Ubuntu's stock ~/.bashrc reads ~/.dircolors; Fedora's colorls.sh reads ~/.dir_colors, then ~/.dircolors.
+    readme = (REPO / "README.md").read_text(encoding="utf-8")
+    assert "cp deepwick.dircolors ~/.dircolors" in readme
+    assert "~/.dir_colors" not in readme.split("## Notes")[0].replace("no `~/.dir_colors`", "")
