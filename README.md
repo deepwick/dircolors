@@ -35,8 +35,11 @@ eval (dircolors -c ~/.dircolors)
   Red, sockets/FIFOs/devices Gold, archives Rose, images/audio/video Magenta,
   documents Orange, source and build files Yellow, temporary, backup and
   compiled files Muted.
-- Set-user-ID, set-group-ID and world-writable entries keep the stock warning
-  style (Background text on Red, Yellow, Green or Teal).
+- Permission warnings keep the stock layout in Deepwick colors: set-user-ID
+  files Background on Red, set-group-ID files Background on Yellow, sticky
+  world-writable directories Background on Green, other world-writable
+  directories Background on Teal, and sticky directories Blue bold on Overlay.
+  Files with capabilities are not colored, as in the stock database.
 - Tools that read `LS_COLORS` (eza, fd, tree, zsh completion) pick these up too.
 
 Tested with GNU coreutils 9.10.
